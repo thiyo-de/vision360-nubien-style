@@ -2,20 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Camera, Building, Home, Store, MapPin, Users } from 'lucide-react';
 
-type Project = {
-  id: number;
-  title: string;
-  category: string;
-  image: string;
-  description: string;
-  features: string[];
-  client: string;
-  completedDate: string;
-};
-
 const PortfolioPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const categories = [
     { name: 'All', icon: Camera },
@@ -230,16 +219,14 @@ const PortfolioPage = () => {
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 50 }}
-              className="glass-card gradient-border max-w-2xl w-full max-h-[90vh] overflow-y-auto no-scrollbar relative mx-4"
+              className="glass-card gradient-border max-w-2xl w-full max-h-[90vh] overflow-y-auto mx-4"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">{selectedProject.title}</h2>
                 <button
-                  type="button"
-                  onClick={(e) => { e.stopPropagation(); setSelectedProject(null); }}
+                  onClick={() => setSelectedProject(null)}
                   className="p-2 hover:bg-white/10 rounded-lg transition-colors"
-                  aria-label="Close project details"
                 >
                   <X size={24} className="text-white" />
                 </button>
@@ -288,9 +275,6 @@ const PortfolioPage = () => {
                   </button>
                 </div>
               </div>
-              {/* Scroll indicators */}
-              <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-black/60 to-transparent rounded-t-[inherit]" />
-              <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/60 to-transparent rounded-b-[inherit]" />
             </motion.div>
           </motion.div>
         )}
