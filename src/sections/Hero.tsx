@@ -21,28 +21,30 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(229,9,20,0.1),transparent)]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Clean Background with Orange Accents */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,146,60,0.1),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(251,146,60,0.08),transparent)]" />
       </div>
 
       {/* Floating Elements */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary/30 rounded-full"
+            className="absolute w-2 h-2 bg-primary/20 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 1, 0.3],
+              y: [0, -20, 0],
+              opacity: [0.2, 0.6, 0.2],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 4 + Math.random() * 2,
               repeat: Infinity,
               delay: Math.random() * 2,
             }}
@@ -56,19 +58,19 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
           {/* Main Headline */}
           <div className="mb-8">
-            <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
+            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 mb-6">
               {words.map((word, index) => (
                 <motion.span
                   key={index}
                   variants={wordVariants}
-                  className={`text-4xl md:text-6xl lg:text-8xl font-black ${
+                  className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight ${
                     ['Premium', 'Virtual'].includes(word)
                       ? 'text-gradient'
-                      : 'text-white'
+                      : 'text-foreground'
                   }`}
                 >
                   {word}
@@ -81,7 +83,7 @@ const Hero = () => {
           <motion.p
             variants={wordVariants}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed"
           >
             Transform your business with immersive 360° experiences. Professional virtual tours 
             that showcase your space like never before.
@@ -91,22 +93,22 @@ const Hero = () => {
           <motion.div
             variants={wordVariants}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16"
           >
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center space-x-3 text-lg"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary flex items-center space-x-3 text-base sm:text-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <span>Get Started Today</span>
               <ArrowRight size={20} />
             </motion.a>
 
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-glass flex items-center space-x-3 text-lg"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-secondary flex items-center space-x-3 text-base sm:text-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <Play size={20} />
               <span>Watch Demo</span>
@@ -116,7 +118,7 @@ const Hero = () => {
           {/* Stats */}
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto"
           >
             {[
               { number: '500+', label: 'Tours Created' },
@@ -127,12 +129,12 @@ const Hero = () => {
                 key={index}
                 variants={wordVariants}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className="glass-card text-center hover:scale-105 transition-transform duration-300"
+                className="card-clean p-6 text-center hover:shadow-md transition-all duration-300 group"
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-muted-foreground text-sm sm:text-base">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -147,12 +149,12 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-border rounded-full flex justify-center"
         >
           <motion.div
-            animate={{ y: [0, 16, 0] }}
+            animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-1 h-3 bg-primary rounded-full mt-2"
           />

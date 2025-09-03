@@ -99,9 +99,9 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-md md:hidden"
+            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm md:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className="flex flex-col items-center justify-center h-full space-y-8 px-6">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.path}
@@ -112,12 +112,12 @@ const Navbar = () => {
                   <Link
                     to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-2xl font-medium hover:text-primary transition-all duration-300 relative group ${
-                      location.pathname === link.path ? 'text-primary' : 'text-white'
+                    className={`text-2xl font-medium hover:text-primary transition-all duration-200 relative group focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                      location.pathname === link.path ? 'text-primary' : 'text-foreground'
                     }`}
                   >
                     {link.name}
-                    <span className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-primary rounded-full transition-all duration-300 ${
+                    <span className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-primary transition-all duration-200 ${
                       location.pathname === link.path ? 'w-8' : 'w-0 group-hover:w-6'
                     }`}></span>
                   </Link>
@@ -130,7 +130,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary flex items-center space-x-2"
+                className="btn-primary flex items-center space-x-2 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Calendar size={20} />
                 <span>Book Appointment</span>

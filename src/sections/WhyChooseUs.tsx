@@ -40,10 +40,10 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side - Image/Video */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Side - Video/Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -51,20 +51,22 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative glass-card p-8 gradient-border">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-xl flex items-center justify-center mb-6">
-                <motion.div
+            <div className="relative card-clean p-6 sm:p-8">
+              <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center mb-6 border border-border">
+                <motion.button
                   whileHover={{ scale: 1.1 }}
-                  className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300"
+                  whileTap={{ scale: 0.95 }}
+                  className="w-16 h-16 sm:w-20 sm:h-20 bg-primary hover:bg-primary-hover rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-orange"
+                  aria-label="Play demo video"
                 >
-                  <div className="w-0 h-0 border-l-[20px] border-l-white border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent ml-2" />
-                </motion.div>
+                  <div className="w-0 h-0 border-l-[16px] sm:border-l-[20px] border-l-primary-foreground border-t-[12px] sm:border-t-[15px] border-t-transparent border-b-[12px] sm:border-b-[15px] border-b-transparent ml-1 sm:ml-2" />
+                </motion.button>
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
                 See Our Process in Action
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground leading-relaxed">
                 Watch how we create stunning virtual tours that transform the way 
                 customers experience your business.
               </p>
@@ -79,11 +81,11 @@ const WhyChooseUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="glass-card p-4 text-center hover:shadow-glow transition-all duration-300"
+                  whileHover={{ y: -2 }}
+                  className="card-clean p-4 text-center hover:shadow-md transition-all duration-300 group"
                 >
-                  <benefit.icon size={24} className="text-primary mx-auto mb-2" />
-                  <h4 className="text-white font-medium text-sm">{benefit.title}</h4>
+                  <benefit.icon size={24} className="text-primary mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <h4 className="text-foreground font-medium text-sm">{benefit.title}</h4>
                 </motion.div>
               ))}
             </div>
@@ -96,11 +98,11 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Why Choose <span className="text-gradient">Vision360</span>?
             </h2>
             
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed">
               We're not just photographers - we're visual storytellers who help 
               businesses create powerful first impressions and drive real results.
             </p>
@@ -117,12 +119,12 @@ const WhyChooseUs = () => {
                   className="flex items-center space-x-4 group"
                 >
                   <motion.div
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0"
+                    whileHover={{ scale: 1.1 }}
+                    className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 group-hover:shadow-orange transition-all duration-300"
                   >
-                    <Check size={16} className="text-white" />
+                    <Check size={16} className="text-primary-foreground" />
                   </motion.div>
-                  <span className="text-white group-hover:text-primary transition-colors duration-300">
+                  <span className="text-foreground group-hover:text-primary transition-colors duration-300">
                     {feature}
                   </span>
                 </motion.div>
@@ -130,7 +132,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8">
               {[
                 { number: '500+', label: 'Projects' },
                 { number: '98%', label: 'Satisfaction' },
@@ -142,25 +144,25 @@ const WhyChooseUs = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="text-center"
+                  className="text-center group"
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground text-sm">{stat.label}</div>
+                  <div className="text-muted-foreground text-xs sm:text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
 
             <motion.a
               href="#portfolio"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary inline-flex items-center space-x-2"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary inline-flex items-center space-x-2 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <span>View Our Work</span>
               <motion.div
-                animate={{ x: [0, 5, 0] }}
+                animate={{ x: [0, 3, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 →
