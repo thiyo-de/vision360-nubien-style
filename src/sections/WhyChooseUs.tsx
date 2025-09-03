@@ -96,11 +96,11 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
               Why Choose <span className="text-gradient">Vision360</span>?
             </h2>
             
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
               We're not just photographers - we're visual storytellers who help 
               businesses create powerful first impressions and drive real results.
             </p>
@@ -130,7 +130,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
               {[
                 { number: '500+', label: 'Projects' },
                 { number: '98%', label: 'Satisfaction' },
@@ -144,10 +144,10 @@ const WhyChooseUs = () => {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   className="text-center"
                 >
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">
+                  <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground text-sm">{stat.label}</div>
+                  <div className="text-muted-foreground text-xs sm:text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
