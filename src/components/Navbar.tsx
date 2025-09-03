@@ -83,7 +83,7 @@ const Navbar = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 text-white hover:text-primary transition-colors"
+                className="lg:hidden p-2 text-white hover:text-primary transition-colors"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </motion.button>
@@ -99,7 +99,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -100 }}
-            className={`fixed top-16 left-0 right-0 z-40 backdrop-blur-md border-b border-white/10 md:hidden ${
+            className={`fixed top-16 left-0 right-0 z-40 backdrop-blur-md border-b border-white/10 lg:hidden ${
               isScrolled 
                 ? 'glass' 
                 : 'bg-black/20'
@@ -116,7 +116,7 @@ const Navbar = () => {
                   <Link
                     to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-2xl font-medium hover:text-primary transition-all duration-300 relative group ${
+                    className={`text-lg font-light hover:text-primary transition-all duration-300 relative group ${
                       location.pathname === link.path ? 'text-primary' : 'text-white'
                     }`}
                   >
