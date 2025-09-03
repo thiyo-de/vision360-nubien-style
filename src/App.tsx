@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -14,6 +15,17 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+};
 
 // Page transition wrapper
 const PageTransition = ({ children }: { children: React.ReactNode }) => (
@@ -30,6 +42,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => (
 // Layout wrapper
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <>
+    <ScrollToTop />
     <Navbar />
     {children}
     <Footer />
