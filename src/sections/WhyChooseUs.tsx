@@ -40,9 +40,9 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-black scroll-mt-20">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-900 to-black scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
           {/* Left Side - Image/Video */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -71,7 +71,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Floating Benefits */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 md:mt-8">
               {benefits.slice(0, 4).map((benefit, index) => (
                 <motion.div
                   key={index}
@@ -80,9 +80,9 @@ const WhyChooseUs = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   whileHover={{ scale: 1.05 }}
-                  className="glass-card p-3 sm:p-4 text-center hover:shadow-glow transition-all duration-300"
+                  className="glass-card p-2 sm:p-3 md:p-4 text-center hover:shadow-glow transition-all duration-300"
                 >
-                  <benefit.icon size={20} className="text-primary mx-auto mb-2" />
+                  <benefit.icon size={16} className="sm:w-5 sm:h-5 text-primary mx-auto mb-1 sm:mb-2" />
                   <h4 className="text-white font-medium text-xs sm:text-sm">{benefit.title}</h4>
                 </motion.div>
               ))}
@@ -96,11 +96,11 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Why Choose <span className="text-gradient">Vision360</span>?
             </h2>
             
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
               We're not just photographers - we're visual storytellers who help 
               businesses create powerful first impressions and drive real results.
             </p>
@@ -130,7 +130,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
               {[
                 { number: '500+', label: 'Projects' },
                 { number: '98%', label: 'Satisfaction' },
@@ -144,10 +144,10 @@ const WhyChooseUs = () => {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   className="text-center"
                 >
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">
+                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground text-sm">{stat.label}</div>
+                  <div className="text-muted-foreground text-xs sm:text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

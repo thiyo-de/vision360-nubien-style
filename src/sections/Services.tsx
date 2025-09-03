@@ -64,12 +64,12 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 px-4"
+          className="text-center mb-12 sm:mb-16 px-4"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             Our <span className="text-gradient">Services</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive virtual tour solutions tailored to your industry and needs
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
@@ -92,12 +92,12 @@ const Services = () => {
               }}
               className="glass-card gradient-border hover:shadow-glow transition-all duration-500 group"
             >
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 group-hover:animate-pulse-glow transition-all duration-300">
-                  <service.icon size={32} className="text-white" />
+              <div className="mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 group-hover:animate-pulse-glow transition-all duration-300">
+                  <service.icon size={24} className="sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {service.description}
                 </p>
               </div>

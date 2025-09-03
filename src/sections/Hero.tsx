@@ -59,13 +59,13 @@ const Hero = () => {
           className="max-w-5xl mx-auto"
         >
           {/* Main Headline */}
-          <div className="mb-8">
-            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 mb-4">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 mb-4">
               {words.map((word, index) => (
                 <motion.span
                   key={index}
                   variants={wordVariants}
-                  className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-center ${
+                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-7xl xl:text-8xl font-black text-center ${
                     ['Premium', 'Virtual'].includes(word)
                       ? 'text-gradient'
                       : 'text-white'
@@ -81,7 +81,7 @@ const Hero = () => {
           <motion.p
             variants={wordVariants}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
             Transform your business with immersive 360° experiences. Professional virtual tours 
             that showcase your space like never before.
@@ -91,24 +91,24 @@ const Hero = () => {
           <motion.div
             variants={wordVariants}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center px-4"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center space-x-3 text-lg"
+              className="btn-primary flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
               <span>Get Started Today</span>
-              <ArrowRight size={20} />
+              <ArrowRight size={18} className="sm:w-5 sm:h-5" />
             </motion.a>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-glass flex items-center space-x-3 text-lg"
+              className="btn-glass flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
-              <Play size={20} />
+              <Play size={18} className="sm:w-5 sm:h-5" />
               <span>Watch Demo</span>
             </motion.button>
           </motion.div>
@@ -116,7 +116,7 @@ const Hero = () => {
           {/* Stats */}
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 sm:mt-20 px-4"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16 md:mt-20 px-4"
           >
             {[
               { number: '500+', label: 'Tours Created' },
@@ -127,12 +127,12 @@ const Hero = () => {
                 key={index}
                 variants={wordVariants}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className="glass-card text-center hover:scale-105 transition-transform duration-300"
+                className="glass-card text-center hover:scale-105 transition-transform duration-300 p-4 sm:p-6"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1 sm:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-muted-foreground text-sm sm:text-base">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
