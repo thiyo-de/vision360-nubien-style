@@ -87,10 +87,10 @@ const ServicesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 px-4">
               Our <span className="text-gradient">Services</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 px-4">
               Comprehensive virtual tour solutions tailored to your industry needs. 
               From real estate to hospitality, we've got you covered.
             </p>
@@ -105,7 +105,7 @@ const ServicesPage = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8"
           >
             {allServices.map((service, index) => (
               <motion.div

@@ -96,10 +96,10 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 px-4">
               Get In <span className="text-gradient">Touch</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 px-4">
               Ready to transform your space with immersive virtual experiences? 
               Let's discuss your project and create something amazing together.
             </p>
@@ -109,8 +109,8 @@ const ContactPage = () => {
 
       {/* Contact Form & Info */}
       <section className="pb-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -191,7 +191,7 @@ const ContactPage = () => {
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label className="block text-white font-medium mb-2">
                         <User size={16} className="inline mr-2" />
@@ -225,7 +225,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label className="block text-white font-medium mb-2">
                         <Phone size={16} className="inline mr-2" />
@@ -257,7 +257,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label className="block text-white font-medium mb-2">Service Needed</label>
                       <select

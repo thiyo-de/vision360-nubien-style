@@ -60,12 +60,12 @@ const Hero = () => {
         >
           {/* Main Headline */}
           <div className="mb-8">
-            <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
+            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 mb-4">
               {words.map((word, index) => (
                 <motion.span
                   key={index}
                   variants={wordVariants}
-                  className={`text-4xl md:text-6xl lg:text-8xl font-black ${
+                  className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-center ${
                     ['Premium', 'Virtual'].includes(word)
                       ? 'text-gradient'
                       : 'text-white'
@@ -81,7 +81,7 @@ const Hero = () => {
           <motion.p
             variants={wordVariants}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
             Transform your business with immersive 360° experiences. Professional virtual tours 
             that showcase your space like never before.
@@ -91,7 +91,7 @@ const Hero = () => {
           <motion.div
             variants={wordVariants}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
           >
             <motion.a
               href="#contact"
@@ -116,7 +116,7 @@ const Hero = () => {
           {/* Stats */}
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 sm:mt-20 px-4"
           >
             {[
               { number: '500+', label: 'Tours Created' },
@@ -129,7 +129,7 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                 className="glass-card text-center hover:scale-105 transition-transform duration-300"
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
                   {stat.number}
                 </div>
                 <div className="text-muted-foreground">{stat.label}</div>

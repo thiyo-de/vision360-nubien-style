@@ -59,9 +59,9 @@ const AboutPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-                About <span className="text-gradient">Vision360</span>
-              </h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
+              About <span className="text-gradient">Vision360</span>
+            </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 We're not just photographers - we're visual storytellers who transform 
                 spaces into immersive experiences that captivate, engage, and convert.
@@ -119,7 +119,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -160,7 +160,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}

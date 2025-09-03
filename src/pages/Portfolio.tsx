@@ -112,10 +112,10 @@ const PortfolioPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 px-4">
               Our <span className="text-gradient">Portfolio</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 px-4">
               Explore our collection of immersive virtual experiences. Each project 
               tells a unique story and showcases our commitment to excellence.
             </p>
@@ -126,14 +126,14 @@ const PortfolioPage = () => {
       {/* Filter Categories */}
       <section className="pb-12">
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {categories.map((category) => (
               <motion.button
                 key={category.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category.name)}
-                className={`glass-card px-6 py-3 flex items-center space-x-2 transition-all duration-300 ${
+                className={`glass-card px-4 sm:px-6 py-3 flex items-center space-x-2 transition-all duration-300 ${
                   selectedCategory === category.name
                     ? 'bg-primary text-white'
                     : 'hover:bg-white/10'
@@ -152,7 +152,7 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-6">
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
             <AnimatePresence>
               {filteredProjects.map((project) => (
@@ -219,7 +219,7 @@ const PortfolioPage = () => {
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 50 }}
-              className="glass-card gradient-border max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="glass-card gradient-border max-w-2xl w-full max-h-[90vh] overflow-y-auto mx-4"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between mb-6">
@@ -255,7 +255,7 @@ const PortfolioPage = () => {
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <h4 className="text-white font-medium mb-1">Client</h4>
                     <p className="text-muted-foreground">{selectedProject.client}</p>
@@ -266,7 +266,7 @@ const PortfolioPage = () => {
                   </div>
                 </div>
 
-                <div className="flex space-x-4 pt-4">
+                <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
                   <button className="btn-primary flex-1">
                     View Live Tour
                   </button>
