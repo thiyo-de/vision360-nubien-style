@@ -2,9 +2,20 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Camera, Building, Home, Store, MapPin, Users } from 'lucide-react';
 
+type Project = {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  description: string;
+  features: string[];
+  client: string;
+  completedDate: string;
+};
+
 const PortfolioPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = [
     { name: 'All', icon: Camera },
