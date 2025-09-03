@@ -128,17 +128,20 @@ const Navbar = () => {
                 </motion.div>
               ))}
               
-              <motion.a
-                href="#contact"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary flex items-center space-x-2"
-              >
-                <Calendar size={20} />
-                <span>Book Appointment</span>
-              </motion.a>
+              {/* CTA Button - Outside nav links */}
+              <div className="mt-8 pt-6 border-t border-white/20">
+                <motion.a
+                  href="#contact"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="btn-primary flex items-center space-x-2 w-full justify-center"
+                >
+                  <Calendar size={20} />
+                  <span>Book Appointment</span>
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         )}
