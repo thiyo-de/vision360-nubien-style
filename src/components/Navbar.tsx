@@ -73,7 +73,7 @@ const Navbar = () => {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary hidden sm:flex items-center space-x-2"
+                className="btn-primary hidden xl:flex items-center space-x-2"
               >
                 <Calendar size={20} />
                 <span>Book Appointment</span>
