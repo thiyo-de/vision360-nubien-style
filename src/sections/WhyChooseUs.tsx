@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-black scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Image/Video */}
