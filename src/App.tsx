@@ -16,14 +16,35 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Scroll to top on route change
+// Scroll to top on route change (robust)
 const ScrollToTop = () => {
   const location = useLocation();
-  
+
+  // Disable native scroll restoration so we control it
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
+    if (location.hash) return;
+
+    // Immediate reset
     window.scrollTo(0, 0);
-  }, [location.pathname]);
-  
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Ensure after route animation/layout
+    const id = window.requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    return () => window.cancelAnimationFrame(id);
+  }, [location.pathname, location.hash]);
+
   return null;
 };
 
@@ -42,7 +63,6 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => (
 // Layout wrapper
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <>
-    <ScrollToTop />
     <Navbar />
     {children}
     <Footer />
@@ -109,6 +129,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>
