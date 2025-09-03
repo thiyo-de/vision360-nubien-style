@@ -55,11 +55,14 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-white hover:text-primary transition-colors duration-300 font-medium ${
+                  className={`relative text-white hover:text-primary transition-all duration-300 font-medium group ${
                     location.pathname === link.path ? 'text-primary' : ''
                   }`}
                 >
                   {link.name}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-primary transition-all duration-300 ${
+                    location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}></span>
                 </Link>
               ))}
             </div>
@@ -109,11 +112,14 @@ const Navbar = () => {
                   <Link
                     to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-2xl font-medium hover:text-primary transition-colors ${
+                    className={`text-2xl font-medium hover:text-primary transition-all duration-300 relative group ${
                       location.pathname === link.path ? 'text-primary' : 'text-white'
                     }`}
                   >
                     {link.name}
+                    <span className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-primary rounded-full transition-all duration-300 ${
+                      location.pathname === link.path ? 'w-8' : 'w-0 group-hover:w-6'
+                    }`}></span>
                   </Link>
                 </motion.div>
               ))}

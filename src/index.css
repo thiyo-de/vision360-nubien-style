@@ -91,6 +91,32 @@ All colors MUST be HSL for perfect theming.
   html {
     scroll-behavior: smooth;
   }
+
+  /* Modern Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 5%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(348 83% 47%), hsl(348 83% 35%));
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(348 83% 60%), hsl(348 83% 47%));
+    box-shadow: 0 0 10px hsl(348 83% 47% / 0.5);
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(348 83% 47%) hsl(0 0% 5%);
+  }
 }
 
 /* Custom Utility Classes */
