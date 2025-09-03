@@ -99,7 +99,11 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -100 }}
-            className="fixed top-16 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-white/10 md:hidden"
+            className={`fixed top-16 left-0 right-0 z-40 backdrop-blur-md border-b border-white/10 md:hidden ${
+              isScrolled 
+                ? 'glass' 
+                : 'bg-black/20'
+            }`}
           >
             <div className="flex flex-col items-center py-8 space-y-6">
               {navLinks.map((link, index) => (
