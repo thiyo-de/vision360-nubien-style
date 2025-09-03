@@ -96,12 +96,12 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-md md:hidden"
+            exit={{ opacity: 0, y: -100 }}
+            className="fixed top-16 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-white/10 md:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className="flex flex-col items-center py-8 space-y-6">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.path}
