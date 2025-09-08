@@ -166,9 +166,9 @@ const ServicesPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
-        {/* Floating Decorative Elements */}
-        <div className="absolute inset-0 pointer-events-none">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Floating Decorative Elements - Hidden on mobile for better readability */}
+        <div className="absolute inset-0 pointer-events-none hidden md:block">
           <motion.div
             animate={{ 
               rotate: [0, 360],
@@ -176,7 +176,7 @@ const ServicesPage = () => {
               y: [0, 50, 0]
             }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-20 left-10 w-16 h-8 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full opacity-20 blur-sm"
+            className="absolute top-20 left-10 w-12 h-6 md:w-16 md:h-8 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full opacity-20 blur-sm"
           />
           <motion.div
             animate={{ 
@@ -185,7 +185,7 @@ const ServicesPage = () => {
               y: [0, 80, 0]
             }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute top-40 right-20 w-12 h-6 bg-gradient-to-r from-green-400 to-lime-400 rounded-full opacity-15 blur-sm"
+            className="absolute top-40 right-20 w-8 h-4 md:w-12 md:h-6 bg-gradient-to-r from-green-400 to-lime-400 rounded-full opacity-15 blur-sm"
           />
           <motion.div
             animate={{ 
@@ -194,7 +194,7 @@ const ServicesPage = () => {
               y: [0, -40, 0]
             }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-32 left-1/4 w-20 h-10 bg-gradient-to-r from-orange-300 to-amber-300 rounded-full opacity-10 blur-sm"
+            className="absolute bottom-32 left-1/4 w-14 h-7 md:w-20 md:h-10 bg-gradient-to-r from-orange-300 to-amber-300 rounded-full opacity-10 blur-sm"
           />
           <motion.div
             animate={{ 
@@ -203,23 +203,23 @@ const ServicesPage = () => {
               y: [0, 60, 0]
             }}
             transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-20 right-1/3 w-14 h-7 bg-gradient-to-r from-lime-400 to-green-300 rounded-full opacity-20 blur-sm"
+            className="absolute bottom-20 right-1/3 w-10 h-5 md:w-14 md:h-7 bg-gradient-to-r from-lime-400 to-green-300 rounded-full opacity-20 blur-sm"
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-4">TESTIMONIALS</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <p className="text-xs md:text-sm uppercase tracking-wider text-gray-400 mb-3 md:mb-4">TESTIMONIALS</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 px-4">
               What Our <span className="text-gradient">Customers</span> Say
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4">
               Discover how our virtual tour solutions have transformed businesses across various industries and helped them achieve remarkable results.
             </p>
           </motion.div>
