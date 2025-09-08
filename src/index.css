@@ -8,53 +8,53 @@ All colors MUST be HSL for perfect theming.
 
 @layer base {
   :root {
-    /* Core Colors */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Core Colors - White & Red Professional Theme */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Brand Colors - Netflix Red Theme */
+    /* Brand Colors - Professional Red Theme */
     --primary: 348 83% 47%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 348 83% 60%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 348 83% 47%;
     --accent-foreground: 0 0% 100%;
 
-    /* Gradients */
+    /* Gradients - White & Red Professional */
     --gradient-primary: linear-gradient(135deg, hsl(348 83% 47%), hsl(348 83% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(348 83% 47%), hsl(295 100% 39%));
-    --gradient-border: linear-gradient(135deg, hsl(348 83% 47% / 0.6), hsl(295 100% 39% / 0.6));
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+    --gradient-secondary: linear-gradient(135deg, hsl(348 83% 47%), hsl(0 0% 94%));
+    --gradient-border: linear-gradient(135deg, hsl(348 83% 47% / 0.8), hsl(348 83% 60% / 0.6));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.4));
 
-    /* Glass Effects */
-    --glass-bg: hsl(0 0% 100% / 0.05);
-    --glass-border: hsl(0 0% 100% / 0.1);
-    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    /* Glass Effects - White Theme */
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(348 83% 47% / 0.2);
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.1);
 
-    /* Shadows & Glows */
-    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(348 83% 47% / 0.4);
-    --shadow-glow-hover: 0 0 60px hsl(348 83% 47% / 0.6);
+    /* Shadows & Glows - Professional White Theme */
+    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 40px hsl(348 83% 47% / 0.3);
+    --shadow-glow-hover: 0 0 60px hsl(348 83% 47% / 0.4);
 
     /* Interactive States */
     --hover-scale: 1.05;
     --hover-tilt: 2deg;
 
-    /* Borders & Inputs */
-    --border: hsl(0 0% 20%);
-    --input: hsl(0 0% 15%);
+    /* Borders & Inputs - White Theme */
+    --border: hsl(0 0% 88%);
+    --input: hsl(0 0% 96%);
     --ring: hsl(348 83% 47%);
 
     --radius: 12px;
@@ -92,13 +92,13 @@ All colors MUST be HSL for perfect theming.
     scroll-behavior: smooth;
   }
 
-  /* Modern Scrollbar */
+  /* Modern Scrollbar - White Theme */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(0 0% 5%);
+    background: hsl(0 0% 94%);
   }
 
   ::-webkit-scrollbar-thumb {
@@ -115,18 +115,18 @@ All colors MUST be HSL for perfect theming.
   /* Firefox */
   html {
     scrollbar-width: thin;
-    scrollbar-color: hsl(348 83% 47%) hsl(0 0% 5%);
+    scrollbar-color: hsl(348 83% 47%) hsl(0 0% 94%);
   }
 }
 
-/* Custom Utility Classes */
+/* Custom Utility Classes - White & Red Theme */
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/80 backdrop-blur-md border border-primary/20;
   }
 
   .glass-card {
-    @apply glass rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    @apply glass rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.1)];
   }
 
   .gradient-border {
@@ -147,7 +147,7 @@ All colors MUST be HSL for perfect theming.
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-red-600 bg-clip-text text-transparent;
   }
 
   .btn-primary {
@@ -155,6 +155,6 @@ All colors MUST be HSL for perfect theming.
   }
 
   .btn-glass {
-    @apply glass text-white font-medium px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 hover:scale-105;
+    @apply glass text-foreground font-medium px-8 py-4 rounded-xl hover:bg-white/90 transition-all duration-300 hover:scale-105;
   }
 }
