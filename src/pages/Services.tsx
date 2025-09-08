@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Camera, Building, Home, Store, MapPin, Zap, Users, Globe } from 'lucide-react';
-import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 const ServicesPage = () => {
   const allServices = [
@@ -165,66 +164,37 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
-        {/* Floating Decorative Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div
-            animate={{ 
-              rotate: [0, 360],
-              x: [0, 100, 0],
-              y: [0, 50, 0]
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-20 left-10 w-16 h-8 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full opacity-20 blur-sm"
-          />
-          <motion.div
-            animate={{ 
-              rotate: [360, 0],
-              x: [0, -80, 0],
-              y: [0, 80, 0]
-            }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute top-40 right-20 w-12 h-6 bg-gradient-to-r from-green-400 to-lime-400 rounded-full opacity-15 blur-sm"
-          />
-          <motion.div
-            animate={{ 
-              rotate: [0, -360],
-              x: [0, 60, 0],
-              y: [0, -40, 0]
-            }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-32 left-1/4 w-20 h-10 bg-gradient-to-r from-orange-300 to-amber-300 rounded-full opacity-10 blur-sm"
-          />
-          <motion.div
-            animate={{ 
-              rotate: [180, -180],
-              x: [0, -120, 0],
-              y: [0, 60, 0]
-            }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-20 right-1/3 w-14 h-7 bg-gradient-to-r from-lime-400 to-green-300 rounded-full opacity-20 blur-sm"
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-primary/10 to-purple-600/10">
+        <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
           >
-            <p className="text-sm uppercase tracking-wider text-gray-400 mb-4">TESTIMONIALS</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              What Our <span className="text-gradient">Customers</span> Say
+              Need Something Custom?
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Discover how our virtual tour solutions have transformed businesses across various industries and helped them achieve remarkable results.
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Every business is unique. Let's discuss your specific needs and create 
+              a tailored solution that works perfectly for you.
             </p>
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-primary inline-flex items-center space-x-2"
+            >
+              <span>Contact Us Today</span>
+              <motion.div
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                →
+              </motion.div>
+            </motion.a>
           </motion.div>
-
-          <TestimonialCarousel />
         </div>
       </section>
     </div>
