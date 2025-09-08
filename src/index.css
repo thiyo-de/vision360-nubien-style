@@ -2,60 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Vision360 Premium Design System - Nubien Style
-All colors MUST be HSL for perfect theming.
+/* Professional Light Design System - White/Gray/Orange
+All colors MUST be HSL for perfect theming and accessibility.
 */
 
 @layer base {
   :root {
-    /* Core Colors */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Base */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    /* Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Brand Colors - Netflix Red Theme */
-    --primary: 348 83% 47%;
+    /* Brand (Orange) */
+    --primary: 24 94% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 348 83% 60%;
+    --primary-glow: 24 94% 60%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary (light gray surfaces) */
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    /* Muted text & fills */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 348 83% 47%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent (subtle orange tint for chips/badges) */
+    --accent: 24 100% 97%;
+    --accent-foreground: 24 85% 35%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(348 83% 47%), hsl(348 83% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(348 83% 47%), hsl(295 100% 39%));
-    --gradient-border: linear-gradient(135deg, hsl(348 83% 47% / 0.6), hsl(295 100% 39% / 0.6));
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+    --gradient-primary: linear-gradient(135deg, hsl(24 94% 50%), hsl(24 94% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(24 94% 50%), hsl(24 100% 60%));
+    --gradient-border: linear-gradient(135deg, hsl(24 94% 50% / 0.2), hsl(24 100% 60% / 0.2));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.9));
 
     /* Glass Effects */
-    --glass-bg: hsl(0 0% 100% / 0.05);
-    --glass-border: hsl(0 0% 100% / 0.1);
-    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(0 0% 88%);
+    --glass-shadow: 0 4px 16px hsl(0 0% 0% / 0.1);
 
     /* Shadows & Glows */
-    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(348 83% 47% / 0.4);
-    --shadow-glow-hover: 0 0 60px hsl(348 83% 47% / 0.6);
+    --shadow-elegant: 0 4px 20px -2px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 20px hsl(24 94% 50% / 0.2);
+    --shadow-glow-hover: 0 0 30px hsl(24 94% 50% / 0.3);
 
     /* Interactive States */
-    --hover-scale: 1.05;
-    --hover-tilt: 2deg;
+    --hover-scale: 1.02;
+    --hover-tilt: 1deg;
 
-    /* Borders & Inputs */
-    --border: hsl(0 0% 20%);
-    --input: hsl(0 0% 15%);
-    --ring: hsl(348 83% 47%);
+    /* Borders, inputs, rings */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 24 94% 50%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
     --radius: 12px;
 
@@ -76,7 +84,28 @@ All colors MUST be HSL for perfect theming.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Keep consistent dark theme */
+  /* Tasteful Dark Mode */
+  .dark {
+    --background: 222 47% 9%;
+    --foreground: 0 0% 100%;
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 24 94% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 13%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 222 10% 20%;
+    --muted-foreground: 220 14% 75%;
+    --accent: 24 60% 20%;
+    --accent-foreground: 24 100% 85%;
+    --border: 222 14% 25%;
+    --input: 222 14% 25%;
+    --ring: 24 94% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+  }
 }
 
 @layer base {
@@ -98,35 +127,53 @@ All colors MUST be HSL for perfect theming.
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(0 0% 5%);
+    background: hsl(0 0% 96%);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, hsl(348 83% 47%), hsl(348 83% 35%));
+    background: linear-gradient(180deg, hsl(24 94% 50%), hsl(24 94% 45%));
     border-radius: 4px;
     transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, hsl(348 83% 60%), hsl(348 83% 47%));
-    box-shadow: 0 0 10px hsl(348 83% 47% / 0.5);
+    background: linear-gradient(180deg, hsl(24 94% 60%), hsl(24 94% 50%));
+    box-shadow: 0 0 10px hsl(24 94% 50% / 0.3);
   }
 
   /* Firefox */
   html {
     scrollbar-width: thin;
-    scrollbar-color: hsl(348 83% 47%) hsl(0 0% 5%);
+    scrollbar-color: hsl(24 94% 50%) hsl(0 0% 96%);
   }
 }
 
 /* Custom Utility Classes */
 @layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl font-semibold
+           bg-orange-600 text-white shadow-sm
+           hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500/40
+           transition;
+  }
+
+  .btn-glass {
+    @apply inline-flex items-center justify-center rounded-xl font-semibold
+           border border-orange-200 text-orange-700 bg-white/80 backdrop-blur
+           hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500/20
+           transition;
+  }
+
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply rounded-2xl border border-[hsl(var(--border))] bg-white/80 backdrop-blur-sm shadow-sm;
   }
 
   .glass-card {
-    @apply glass rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    @apply glass p-6;
   }
 
   .gradient-border {
@@ -144,17 +191,5 @@ All colors MUST be HSL for perfect theming.
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: xor;
     -webkit-mask-composite: xor;
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent;
-  }
-
-  .btn-primary {
-    @apply bg-gradient-to-b from-red-500 to-red-700 text-white font-medium px-8 py-4 rounded-xl shadow-lg hover:shadow-red-500/40 hover:shadow-2xl transition-all duration-300 hover:scale-105;
-  }
-
-  .btn-glass {
-    @apply glass text-white font-medium px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 hover:scale-105;
   }
 }
