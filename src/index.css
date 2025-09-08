@@ -2,60 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Vision360 Premium Design System - Nubien Style
-All colors MUST be HSL for perfect theming.
+/* Professional Light Design System - Orange & White Theme
+Clean, modern design inspired by leading business platforms.
 */
 
 @layer base {
   :root {
-    /* Core Colors */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Base Colors - Clean White Background */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Brand Colors - Netflix Red Theme */
-    --primary: 348 83% 47%;
+    /* Brand Colors - Professional Orange */
+    --primary: 24 94% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 348 83% 60%;
+    --primary-glow: 24 94% 60%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Light Gray Surfaces */
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    /* Muted Colors */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 348 83% 47%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Subtle Orange Tint */
+    --accent: 24 100% 97%;
+    --accent-foreground: 24 85% 35%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(348 83% 47%), hsl(348 83% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(348 83% 47%), hsl(295 100% 39%));
-    --gradient-border: linear-gradient(135deg, hsl(348 83% 47% / 0.6), hsl(295 100% 39% / 0.6));
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+    /* Gradients - Orange Based */
+    --gradient-primary: linear-gradient(135deg, hsl(24 94% 50%), hsl(24 94% 42%));
+    --gradient-secondary: linear-gradient(135deg, hsl(24 94% 50%), hsl(14 91% 43%));
+    --gradient-border: linear-gradient(135deg, hsl(24 94% 50% / 0.3), hsl(14 91% 43% / 0.3));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.6));
 
-    /* Glass Effects */
-    --glass-bg: hsl(0 0% 100% / 0.05);
-    --glass-border: hsl(0 0% 100% / 0.1);
-    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    /* Glass Effects - Light Theme */
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(0 0% 88%);
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.1);
 
-    /* Shadows & Glows */
-    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(348 83% 47% / 0.4);
-    --shadow-glow-hover: 0 0 60px hsl(348 83% 47% / 0.6);
+    /* Shadows & Glows - Subtle */
+    --shadow-elegant: 0 10px 25px -5px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 20px hsl(24 94% 50% / 0.3);
+    --shadow-glow-hover: 0 0 30px hsl(24 94% 50% / 0.4);
 
     /* Interactive States */
-    --hover-scale: 1.05;
-    --hover-tilt: 2deg;
+    --hover-scale: 1.02;
+    --hover-tilt: 1deg;
 
     /* Borders & Inputs */
-    --border: hsl(0 0% 20%);
-    --input: hsl(0 0% 15%);
-    --ring: hsl(348 83% 47%);
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 24 94% 50%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
     --radius: 12px;
 
@@ -92,41 +100,41 @@ All colors MUST be HSL for perfect theming.
     scroll-behavior: smooth;
   }
 
-  /* Modern Scrollbar */
+  /* Light Theme Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(0 0% 5%);
+    background: hsl(0 0% 96%);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, hsl(348 83% 47%), hsl(348 83% 35%));
+    background: linear-gradient(180deg, hsl(24 94% 50%), hsl(24 94% 42%));
     border-radius: 4px;
     transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, hsl(348 83% 60%), hsl(348 83% 47%));
-    box-shadow: 0 0 10px hsl(348 83% 47% / 0.5);
+    background: linear-gradient(180deg, hsl(24 94% 60%), hsl(24 94% 50%));
+    box-shadow: 0 0 10px hsl(24 94% 50% / 0.3);
   }
 
   /* Firefox */
   html {
     scrollbar-width: thin;
-    scrollbar-color: hsl(348 83% 47%) hsl(0 0% 5%);
+    scrollbar-color: hsl(24 94% 50%) hsl(0 0% 96%);
   }
 }
 
-/* Custom Utility Classes */
+/* Professional Light Theme Utility Classes */
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/80 backdrop-blur-sm border border-[hsl(var(--border))] shadow-sm;
   }
 
   .glass-card {
-    @apply glass rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    @apply glass rounded-2xl p-6 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)];
   }
 
   .gradient-border {
@@ -147,14 +155,14 @@ All colors MUST be HSL for perfect theming.
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 bg-clip-text text-transparent;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-b from-red-500 to-red-700 text-white font-medium px-8 py-4 rounded-xl shadow-lg hover:shadow-red-500/40 hover:shadow-2xl transition-all duration-300 hover:scale-105;
+    @apply inline-flex items-center justify-center rounded-xl font-semibold bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-sm hover:bg-[hsl(var(--primary))]/90 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--ring))]/40 transition-all duration-300 px-8 py-4;
   }
 
   .btn-glass {
-    @apply glass text-white font-medium px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 hover:scale-105;
+    @apply inline-flex items-center justify-center rounded-xl font-semibold border border-orange-200 text-orange-700 bg-white/80 backdrop-blur hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--ring))]/20 transition-all duration-300 px-8 py-4;
   }
 }
