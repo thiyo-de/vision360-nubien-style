@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Camera, Building, Home, Store, MapPin, Zap, Users, Globe } from 'lucide-react';
+import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 const ServicesPage = () => {
   const allServices = [
@@ -165,8 +166,48 @@ const ServicesPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6">
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Floating Decorative Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            animate={{ 
+              rotate: [0, 360],
+              x: [0, 100, 0],
+              y: [0, 50, 0]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-20 left-10 w-16 h-8 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full opacity-20 blur-sm"
+          />
+          <motion.div
+            animate={{ 
+              rotate: [360, 0],
+              x: [0, -80, 0],
+              y: [0, 80, 0]
+            }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute top-40 right-20 w-12 h-6 bg-gradient-to-r from-green-400 to-lime-400 rounded-full opacity-15 blur-sm"
+          />
+          <motion.div
+            animate={{ 
+              rotate: [0, -360],
+              x: [0, 60, 0],
+              y: [0, -40, 0]
+            }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-32 left-1/4 w-20 h-10 bg-gradient-to-r from-orange-300 to-amber-300 rounded-full opacity-10 blur-sm"
+          />
+          <motion.div
+            animate={{ 
+              rotate: [180, -180],
+              x: [0, -120, 0],
+              y: [0, 60, 0]
+            }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-20 right-1/3 w-14 h-7 bg-gradient-to-r from-lime-400 to-green-300 rounded-full opacity-20 blur-sm"
+          />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -174,84 +215,16 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              What Our Clients Say
+            <p className="text-sm uppercase tracking-wider text-gray-400 mb-4">TESTIMONIALS</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              What Our <span className="text-gradient">Customers</span> Say
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it. See what our satisfied clients have to say about our virtual tour services.
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Discover how our virtual tour solutions have transformed businesses across various industries and helped them achieve remarkable results.
             </p>
           </motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                name: "Sarah Johnson",
-                role: "Real Estate Agent",
-                company: "Premier Properties",
-                image: "👩‍💼",
-                rating: 5,
-                testimonial: "The virtual tours have transformed how I showcase properties. Clients can explore homes remotely, saving everyone time and increasing serious inquiries by 40%."
-              },
-              {
-                name: "Michael Chen",
-                role: "Hotel Manager",
-                company: "Boutique Suites",
-                image: "👨‍💼",
-                rating: 5,
-                testimonial: "Our booking rate increased by 35% after implementing virtual tours. Guests know exactly what to expect, leading to higher satisfaction scores."
-              },
-              {
-                name: "Emma Williams",
-                role: "Marketing Director",
-                company: "TechStart Inc.",
-                image: "👩‍💻",
-                rating: 5,
-                testimonial: "The office virtual tour on our website has been incredible for remote hiring. Candidates feel connected to our space before even visiting."
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card p-8 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-2xl mr-4">
-                    {testimonial.image}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    <p className="text-xs text-primary font-medium">{testimonial.company}</p>
-                  </div>
-                </div>
-                
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.1 + i * 0.1 }}
-                      className="text-primary text-lg"
-                    >
-                      ★
-                    </motion.span>
-                  ))}
-                </div>
-                
-                <blockquote className="text-muted-foreground leading-relaxed italic">
-                  "{testimonial.testimonial}"
-                </blockquote>
-              </motion.div>
-            ))}
-          </motion.div>
+          <TestimonialCarousel />
         </div>
       </section>
     </div>
