@@ -164,36 +164,93 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary/10 to-purple-600/10">
-        <div className="container mx-auto px-6 text-center">
+      {/* Testimonials Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Need Something Custom?
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              What Our Clients Say
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Every business is unique. Let's discuss your specific needs and create 
-              a tailored solution that works perfectly for you.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Don't just take our word for it. See what our satisfied clients have to say about our virtual tour services.
             </p>
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary inline-flex items-center space-x-2"
-            >
-              <span>Contact Us Today</span>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                name: "Sarah Johnson",
+                role: "Real Estate Agent",
+                company: "Premier Properties",
+                image: "👩‍💼",
+                rating: 5,
+                testimonial: "The virtual tours have transformed how I showcase properties. Clients can explore homes remotely, saving everyone time and increasing serious inquiries by 40%."
+              },
+              {
+                name: "Michael Chen",
+                role: "Hotel Manager",
+                company: "Boutique Suites",
+                image: "👨‍💼",
+                rating: 5,
+                testimonial: "Our booking rate increased by 35% after implementing virtual tours. Guests know exactly what to expect, leading to higher satisfaction scores."
+              },
+              {
+                name: "Emma Williams",
+                role: "Marketing Director",
+                company: "TechStart Inc.",
+                image: "👩‍💻",
+                rating: 5,
+                testimonial: "The office virtual tour on our website has been incredible for remote hiring. Candidates feel connected to our space before even visiting."
+              }
+            ].map((testimonial, index) => (
               <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+                key={index}
+                variants={itemVariants}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="glass-card p-8 hover:shadow-lg transition-all duration-300"
               >
-                →
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-2xl mr-4">
+                    {testimonial.image}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="text-xs text-primary font-medium">{testimonial.company}</p>
+                  </div>
+                </div>
+                
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 + i * 0.1 }}
+                      className="text-primary text-lg"
+                    >
+                      ★
+                    </motion.span>
+                  ))}
+                </div>
+                
+                <blockquote className="text-muted-foreground leading-relaxed italic">
+                  "{testimonial.testimonial}"
+                </blockquote>
               </motion.div>
-            </motion.a>
+            ))}
           </motion.div>
         </div>
       </section>
